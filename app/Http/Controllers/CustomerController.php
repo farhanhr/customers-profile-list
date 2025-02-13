@@ -117,7 +117,7 @@ class CustomerController extends Controller
 
         $default_image_path = '/default-images/avatar.jpg';
         if ($customer->image !== $default_image_path) {
-                File::delete(public_path($customer->image));
+                // File::delete(public_path($customer->image));
         } 
         $customer->delete();
 
@@ -131,8 +131,15 @@ class CustomerController extends Controller
             ->orWhere('last_name', 'LIKE', "%$request->search%")
             ->orWhere('email', 'LIKE', "%$request->search%")
             ->orWhere('phone', 'LIKE', "%$request->search%");
-        })->orderBy('created_at', $request->has('order') && $request->order == 'asc' ? 'ASC' : 'DESC')->get();
+        })->orderBy('created_at', $request->has('order') && $request->order == 'asc' ? 'ASC' : 'DESC')->onlyTrashed()->get();
 
         return view('customer.recycle', compact('customers'));
+    }
+
+    public function restore(string $id) {
+        $customer = Customer::onlyTrashed()->findOrFail($id);
+        $customer->restore();
+
+        return redirect()->back();
     }
 }

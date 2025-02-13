@@ -8,5 +8,6 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('customers/recycle', [CustomerController::class, 'recycleIndex'])->name('customers.recycle');
+Route::get('customers/restore/{customer}', [CustomerController::class, 'restore'])->name('customers.restore');
 Route::resource('customers', CustomerController::class);
 

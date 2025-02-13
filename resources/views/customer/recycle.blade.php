@@ -57,9 +57,8 @@
                                 <td>{{ $customer->email }}</td>
                                 <td>{{ $customer->bank_account_number }}</td>
                                 <td>
-                                    <a href="{{ route('customers.edit', $customer->id) }}" style="color: #2c2c2c;" class="ms-1 me-1"><i class="far fa-edit"></i></a>
-                                    <a href="{{ route('customers.show', $customer->id) }}" style="color: #2c2c2c;" class="ms-1 me-1"><i class="far fa-eye"></i></a>
-                                    <a href="javascript:;" onclick="if (confirm('Are you sure to delete it?')) $('.form-{{ $customer->id }}').submit()" style="color: #2c2c2c;" class="ms-1 me-1"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="{{ route('customers.restore', $customer->id) }}" style="color: #2c2c2c;" class="ms-1 me-1"><i class="">restore</i></a>
+                                    <a href="javascript:;" onclick="if (confirm('Are you sure to delete it?')) $('.form-{{ $customer->id }}').submit()" style="color: #2c2c2c;" class="ms-1 me-1"><i class="">delete</i></a>
                                     <form class="form-{{ $customer->id }}" action="{{ route('customers.destroy', $customer->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
