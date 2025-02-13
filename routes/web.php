@@ -7,4 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('customers/recycle', [CustomerController::class, 'recycleIndex'])->name('customers.recycle');
 Route::resource('customers', CustomerController::class);
+

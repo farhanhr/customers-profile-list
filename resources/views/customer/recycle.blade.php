@@ -9,7 +9,7 @@
                 <div class="card-header">
                     <div class="row">
                     <div class="col-md-3">
-                        <a href="{{ route('customers.create') }}" class="btn" style="background-color: #4643d3; color: white;"><i class="fas fa-plus"></i> Create Customer</a>
+                        <a href="{{ route('customers.index') }}" class="btn" style="background-color: #4643d3; color: white;"><i class="fas fa-chevron-left"></i> Back</a>
                     </div>
                     <div class="col-md-5">
                         <form action="">
@@ -29,9 +29,6 @@
                                 </select>
                             </div>
                         </form>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="{{ route('customers.recycle') }}" class="btn btn-dark" ><i class="fas fa-trash-alt"></i> Recycle Bin</a>
                     </div>
                     </div>
                       
