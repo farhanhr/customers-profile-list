@@ -14,7 +14,7 @@
                     <div class="col-md-8">
                         <form action="">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Search anything..." aria-describedby="button-addon2">
+                                <input type="text" class="form-control" placeholder="Search anything..." aria-describedby="button-addon2" name="search">
                                 <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
                             </div>
                         </form>
