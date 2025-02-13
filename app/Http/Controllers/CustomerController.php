@@ -115,10 +115,6 @@ class CustomerController extends Controller
     {
         $customer = Customer::findOrFail($id);
 
-        $default_image_path = '/default-images/avatar.jpg';
-        if ($customer->image !== $default_image_path) {
-                // File::delete(public_path($customer->image));
-        } 
         $customer->delete();
 
         return redirect()->route('customers.index');
@@ -139,6 +135,17 @@ class CustomerController extends Controller
     public function restore(string $id) {
         $customer = Customer::onlyTrashed()->findOrFail($id);
         $customer->restore();
+
+        return redirect()->back();
+    }
+
+    public function forceDestroy(string $id) {
+        $customer = Customer::onlyTrashed()->findOrFail($id);
+        $default_image_path = '/default-images/avatar.jpg';
+        if ($customer->image !== $default_image_path) {
+                File::delete(public_path($customer->image));
+        } 
+        $customer->forceDelete();
 
         return redirect()->back();
     }
