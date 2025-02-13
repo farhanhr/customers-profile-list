@@ -14,8 +14,8 @@
                                 alt="customer-profile-image" width="130" class="rounded mb-2 img-thumbnail">
                         </div>
                         <div class="media-body mb-5 text-white">
-                            <h4 class="mt-0 mb-0">Jhon Deo</h4>
-                            <p class="small mb-4">jhon@gmail.com</p>
+                            <h4 class="mt-0 mb-0">{{ $customer->first_name . " " . $customer->last_name}}</h4>
+                            <p class="small mb-4">{{ $customer->email }}</p>
                         </div>
                     </div>
                 </div>
