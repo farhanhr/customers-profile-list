@@ -79,7 +79,10 @@ class CustomerController extends Controller
 
         if($request->hasFile('image')) {
             //delete previous image file
-            File::delete(public_path($customer->image));
+            $default_image_path = '/default-images/avatar.jpg';
+            if ($customer->image !== $default_image_path) {
+                File::delete(public_path($customer->image));
+            } 
 
             //store new image
             $image = $request->file('image');
