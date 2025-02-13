@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('image')->default('/default-images/avatar.jpg');
-            $table->string('first-name');
-            $table->string('last-name');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email')->unique();
-            $table->integer('phone')->unique();
-            $table->integer('bank_account_number')->unique();
+            $table->bigInteger('phone')->unique();
+            $table->bigInteger('bank_account_number')->unique();
             $table->text('about')->nullable();
             $table->timestamps();
         });
