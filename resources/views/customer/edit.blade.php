@@ -36,38 +36,38 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label for="">First Name</label>
-                                    <input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}">
+                                    <input type="text" class="form-control" name="first_name" value="{{ $customer->first_name }}">
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label for="">Last Name</label>
-                                    <input type="text" class="form-control" name="last_name" value={{ old('last_name') }}>
+                                    <input type="text" class="form-control" name="last_name" value={{ $customer->last_name }}>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input type="email" class="form-control" name="email" value={{ old('email') }}>
+                                    <input type="email" class="form-control" name="email" value={{ $customer->email }}>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label for="">Phone</label>
-                                    <input type="text" class="form-control" name="phone" value={{ old('phone') }}>
+                                    <input type="text" class="form-control" name="phone" value={{ $customer->phone }}>
                                 </div>
                             </div>
     
                             <div class="col-md-12 mb-3">
                                 <div class="form-group">
                                     <label for="">Bank Account Number</label>
-                                    <input type="text" class="form-control" name="bank_account_number" value={{ old('bank_account_number') }}>
+                                    <input type="text" class="form-control" name="bank_account_number" value={{ $customer->bank_account_number }}>
                                 </div>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <div class="form-group">
                                     <label for="">About</label>
-                                    <textarea type="text" class="form-control" name="about">{{ old('about') }}</textarea>
+                                    <textarea type="text" class="form-control" name="about">{{ $customer->about }}</textarea>
                                 </div>
                             </div>
                             <div class="col-md-12 mb-3">

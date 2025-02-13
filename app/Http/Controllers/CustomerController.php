@@ -64,7 +64,9 @@ class CustomerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+
+        return view('customer.edit', compact('customer'));
     }
 
     /**
